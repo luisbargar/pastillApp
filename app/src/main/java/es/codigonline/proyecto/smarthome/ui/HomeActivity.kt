@@ -60,6 +60,10 @@ class HomeActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        binding.appBarHome.fab.setOnClickListener {
+            startActivity(Intent(this, NewDeviceActivity::class.java))
+        }
+
         val navViewBinding = NavHeaderHomeBinding.bind(binding.navView.getHeaderView(0))
         navViewBinding.usuario.text = App.getUsuario()!!.nombre
 

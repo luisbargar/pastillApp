@@ -15,7 +15,7 @@
     <string name="uso">Uso</string>
     <string name="url">web</string>
     <string name="imagen">Imagen</string>
-    <string name="cantidad_toma">cantidad toma</string>
+    <string name="cantidad_toma">gramos</string>
     <string name="manana">Mañana</string>
     <string name="tarde">Tarde</string>
     <string name="noche">Noche</string>
@@ -28,7 +28,7 @@
     <string name="logo_tarde">Logo Tarde</string>
     <string name="logo_noche">Logo Noche</string>
     <string name="introduce_el_nombre">Introduce el nombre</string>
-    <string name="show_numero">%2.1f pastillas</string>
+    <string name="show_numero">%2.1f mg/g</string>
     <string name="externo">Enlace externo</string>
     <string name="escribir_nombre">Debes escribir un nombre</string>
     <string name="rellenar_campos">Debes rellenar todos los campos</string>
