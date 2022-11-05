@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">pastillApp</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_meds">Medicación</string>
+    <string name="menu_existencias">No existencias</string>
+    <string name="contrasenya">Contraseña</string>
+    <string name="login">Acceso</string>
+    <string name="registro">Registro</string>
+    <string name="uso">Uso</string>
+    <string name="url">web</string>
+    <string name="imagen">Imagen</string>
+    <string name="cantidad_toma">cantidad toma</string>
+    <string name="manana">Mañana</string>
+    <string name="tarde">Tarde</string>
+    <string name="noche">Noche</string>
+    <string name="guardar">Guardar</string>
+    <string name="username">Nombre del usuario</string>
+    <string name="repeat_password">Repetir contraseña</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="horario">Horarios:</string>
+    <string name="logo_manana">Logo Mañana</string>
+    <string name="logo_tarde">Logo Tarde</string>
+    <string name="logo_noche">Logo Noche</string>
+    <string name="introduce_el_nombre">Introduce el nombre</string>
+    <string name="show_numero">%2.1f pastillas</string>
+    <string name="externo">Enlace externo</string>
+    <string name="escribir_nombre">Debes escribir un nombre</string>
+    <string name="rellenar_campos">Debes rellenar todos los campos</string>
+    <string name="contrasenyas_no_coinciden">Las contraseñas no coinciden</string>
+    <string name="error_crear_usuario">Error al crear el usuario</string>
+    <string name="medicacion_existe">El nombre ya existe</string>
+    <string name="eliminar">Eliminar</string>
+</resources>

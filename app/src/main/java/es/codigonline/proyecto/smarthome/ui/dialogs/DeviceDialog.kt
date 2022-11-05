@@ -1,0 +1,99 @@
+package es.codigonline.proyecto.smarthome.ui.dialogs
+
+import android.app.AlertDialog
+import android.app.Dialog
+import android.graphics.Color
+import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
+import com.bumptech.glide.Glide
+import es.codigonline.proyecto.smarthome.R
+import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
+import es.codigonline.proyecto.smarthome.databinding.FullDeviceBinding
+import es.codigonline.proyecto.smarthome.ui.home.HomeViewModel
+
+class DeviceDialog(val data: MedicacionCompleta) : DialogFragment() {
+
+    lateinit var binding: FullDeviceBinding
+    private val homeViewModel: HomeViewModel by viewModels()
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return activity?.let {
+
+            val builder = AlertDialog.Builder(it)
+            // Get the layout inflater
+            val inflater = requireActivity().layoutInflater
+            val view = inflater.inflate(R.layout.full_device, null)
+            binding = FullDeviceBinding.bind(view)
+            binding.nombre.text = data.medicacion.nombre
+            binding.uso.text = data.medicacion.uso
+            binding.numero.text = getString(R.string.show_numero, data.medicacion.numero)
+            binding.url.text = getString(R.string.externo)
+            binding.url.setTextColor(Color.BLUE)
+            binding.url.setOnClickListener {
+
+            }
+
+            val circularProgressDrawable = CircularProgressDrawable(requireContext())
+            circularProgressDrawable.strokeWidth = 5f
+            circularProgressDrawable.centerRadius = 30f
+            circularProgressDrawable.start()
+            Glide
+                .with(requireContext())
+                .load(data.medicacion.imagen)
+                .centerCrop()
+                .placeholder(circularProgressDrawable)
+                .into(binding.imagen)
+
+            if (!data.tarde) {
+                binding.tarde.visibility = View.GONE
+            }
+            if (!data.manana) {
+                binding.manana.visibility = View.GONE
+            }
+            if (!data.noche) {
+                binding.noche.visibility = View.GONE
+            }
+
+            if (data.toma) {
+                binding.like.setIconTintResource(R.color.red)
+
+            } else {
+                binding.like.setIconTintResource(R.color.md_theme_light_outline)
+            }
+            if (data.stock) {
+                binding.stock.setIconTintResource(R.color.green)
+            } else {
+                binding.stock.setIconTintResource(R.color.md_theme_light_outline)
+            }
+
+            binding.like.setOnClickListener {
+                if (data.toma) {
+                    homeViewModel.delToma(data.medicacion.id)
+                    binding.like.setIconTintResource(R.color.md_theme_light_outline)
+                } else {
+                    binding.like.setIconTintResource(R.color.red)
+                    homeViewModel.addToma(data.medicacion.id)
+                }
+            }
+            binding.stock.setOnClickListener {
+                if (data.stock) {
+                    homeViewModel.delStock(data.medicacion.id)
+                    binding.stock.setIconTintResource(R.color.md_theme_light_outline)
+                } else {
+                    homeViewModel.addStock(data.medicacion.id)
+                    binding.stock.setIconTintResource(R.color.green)
+                }
+            }
+
+
+
+
+
+            builder.setView(view)
+            builder.create()
+        } ?: throw IllegalStateException("Activity cannot be null")
+    }
+}

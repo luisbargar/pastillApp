@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "8664359118",
+    "project_id": "smarthome-proyecto",
+    "storage_bucket": "smarthome-proyecto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8664359118:android:ec591f4e059f50e957b09f",
+        "android_client_info": {
+          "package_name": "es.codigonline.proyecto.smarthome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8664359118-miro4chorl34pl7jfm3f2gkbsta2u2fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr1AfQlpxQzTKFz_laVemfRlLS2T40mnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8664359118-miro4chorl34pl7jfm3f2gkbsta2u2fs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
