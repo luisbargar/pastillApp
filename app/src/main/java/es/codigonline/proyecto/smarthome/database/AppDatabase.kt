@@ -53,14 +53,49 @@ abstract class AppDatabase : RoomDatabase() {
                         App.getDatabase().medicacionDao().save(
                             Medicacion(
                                 "Ibuprofeno",
-                                "para el dolor de cabeza",
-                                "https://www.amazon.es/TP-Link-Tapo-P100-Inteligente-Inalámbrico/dp/B08GDD17BS/ref=sr_1_5?__mk_es_ES=ÅMÅŽÕÑ&crid=3MWQ9LMCVQ6SF&keywords=enchufe+wifi&qid=1661089108&sprefix=enchufe+wifi%2Caps%2C90&sr=8-5",
-                                "https://m.media-amazon.com/images/I/61NfVfnla8L._AC_SL1000_.jpg",
-                                1.5,
-
+                                "Para el dolor de cabeza",
+                                "https://medlineplus.gov/spanish/druginfo/meds/a682159-es.html",
+                                "https://static.eldiario.es/clip/6a876801-0e6b-467a-b293-e48217ab77d0_16-9-discover-aspect-ratio_default_0.jpg",
+                                600.0,
 
                             )
+
                         )
+
+                        App.getDatabase().medicacionDao().save(
+                            Medicacion(
+                                "Adiro",
+                                "Para la circulación",
+                                "https://cima.aemps.es/cima/dochtml/p/62825/P_62825.html",
+                                "https://s1.eestatic.com/2018/06/19/ciencia/salud/medicamentos-farmacias-bayer_316231470_82707549_1706x960.jpg",
+                                100.0,
+
+                                )
+
+                        )
+                        App.getDatabase().medicacionDao().save(
+                            Medicacion(
+                                "Omeprazol",
+                                "Para la úlcera",
+                                "https://cima.aemps.es/cima/dochtml/p/78891/Prospecto_78891.html",
+                                "https://www.65ymas.com/uploads/s1/21/07/43/omeprazol.jpeg",
+                                40.0,
+
+                                )
+
+                        )
+                        App.getDatabase().medicacionDao().save(
+                            Medicacion(
+                                "Alprazolam",
+                                "Para los nervios",
+                                "https://medlineplus.gov/spanish/druginfo/meds/a684001-es.html",
+                                "https://nomenclator.org/img/envase.900/alprazolam-cinfa-1-mg-comprimidos.jpg",
+                                1.0,
+
+                                )
+
+                        )
+
 
                     }
                 }

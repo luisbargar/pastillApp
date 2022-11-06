@@ -6,9 +6,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_inicio">Inicio</string>
-    <string name="menu_meds">Medicación</string>
-    <string name="menu_existencias">No existencias</string>
+    <string name="menu_inicio">Todas las medicaciones</string>
+    <string name="menu_meds">Medicaciones usuario</string>
+    <string name="menu_existencias">Comprar</string>
     <string name="contrasenya">Contraseña</string>
     <string name="login">Acceso</string>
     <string name="registro">Registro</string>
