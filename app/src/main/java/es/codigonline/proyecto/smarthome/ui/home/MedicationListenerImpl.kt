@@ -6,19 +6,19 @@ import android.net.Uri
 import androidx.fragment.app.FragmentManager
 import es.codigonline.proyecto.smarthome.app.Constantes
 import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
-import es.codigonline.proyecto.smarthome.ui.adapters.DeviceListener
+import es.codigonline.proyecto.smarthome.ui.adapters.MedicationListener
 import es.codigonline.proyecto.smarthome.ui.dialogs.DeviceDialog
-import es.codigonline.proyecto.smarthome.ui.newDevice.NewDeviceActivity
+import es.codigonline.proyecto.smarthome.ui.newMedication.NewMedicationActivity
 
-class DeviceListenerImpl(
+class MedicationListenerImpl(
     val context: Context,
     val viewModel: HomeViewModel,
     private val fragmentManager: FragmentManager
-) : DeviceListener {
+) : MedicationListener {
 
 
     override fun edit(medicacionCompleta: MedicacionCompleta) {
-        val intent = Intent(context, NewDeviceActivity::class.java)
+        val intent = Intent(context, NewMedicationActivity::class.java)
         intent.putExtra(Constantes.MEDICACION, medicacionCompleta)
         context.startActivity(intent)
 

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import es.codigonline.proyecto.smarthome.databinding.FragmentDevicesBinding
 
-class PersonalesFragment : Fragment() {
+class TomaFragment : Fragment() {
     private var _binding: FragmentDevicesBinding? = null
 
     // This property is only valid between onCreateView and
@@ -26,9 +26,9 @@ class PersonalesFragment : Fragment() {
         _binding = FragmentDevicesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        viewModel.medicaciones(TipoMedicacion.STOCKS).observe(viewLifecycleOwner) {
+        viewModel.medicaciones(TipoMedicacion.TOMAS).observe(viewLifecycleOwner) {
             CommonFragmentImpl(
-                DeviceListenerImpl(
+                MedicationListenerImpl(
                     requireContext(),
                     viewModel,
                     parentFragmentManager
@@ -42,5 +42,4 @@ class PersonalesFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

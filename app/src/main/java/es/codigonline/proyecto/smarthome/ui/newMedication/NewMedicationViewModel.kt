@@ -1,7 +1,6 @@
-package es.codigonline.proyecto.smarthome.ui.newDevice
+package es.codigonline.proyecto.smarthome.ui.newMedication
 
 import android.database.sqlite.SQLiteConstraintException
-import android.util.Log
 import androidx.lifecycle.*
 import es.codigonline.proyecto.smarthome.app.App
 import es.codigonline.proyecto.smarthome.database.entities.*
@@ -9,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class NewDeviceViewModel : ViewModel() {
+class NewMedicationViewModel : ViewModel() {
 
     private val horarioDao = App.getDatabase().horarioDao()
     private val medicacionDao = App.getDatabase().medicacionDao()

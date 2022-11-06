@@ -14,7 +14,7 @@
         android:theme="@style/Main"
         tools:targetApi="31">
         <activity
-            android:name=".ui.newDevice.NewDeviceActivity"
+            android:name=".ui.newMedication.NewMedicationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.HomeActivity"

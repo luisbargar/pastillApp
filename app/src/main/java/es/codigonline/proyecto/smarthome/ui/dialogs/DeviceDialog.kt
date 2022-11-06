@@ -58,33 +58,33 @@ class DeviceDialog(val data: MedicacionCompleta) : DialogFragment() {
             }
 
             if (data.toma) {
-                binding.like.setIconTintResource(R.color.red)
+                binding.like.setIconTintResource(R.color.green)
 
             } else {
-                binding.like.setIconTintResource(R.color.md_theme_light_outline)
+                binding.like.setIconTintResource(R.color.md_theme_light_surface)
             }
             if (data.stock) {
-                binding.stock.setIconTintResource(R.color.green)
+                binding.stock.setIconTintResource(R.color.red)
             } else {
-                binding.stock.setIconTintResource(R.color.md_theme_light_outline)
+                binding.stock.setIconTintResource(R.color.md_theme_light_surface)
             }
 
             binding.like.setOnClickListener {
                 if (data.toma) {
                     homeViewModel.delToma(data.medicacion.id)
-                    binding.like.setIconTintResource(R.color.md_theme_light_outline)
+                    binding.like.setIconTintResource(R.color.md_theme_light_surface)
                 } else {
-                    binding.like.setIconTintResource(R.color.red)
+                    binding.like.setIconTintResource(R.color.green)
                     homeViewModel.addToma(data.medicacion.id)
                 }
             }
             binding.stock.setOnClickListener {
                 if (data.stock) {
                     homeViewModel.delStock(data.medicacion.id)
-                    binding.stock.setIconTintResource(R.color.md_theme_light_outline)
+                    binding.stock.setIconTintResource(R.color.md_theme_light_surface)
                 } else {
                     homeViewModel.addStock(data.medicacion.id)
-                    binding.stock.setIconTintResource(R.color.green)
+                    binding.stock.setIconTintResource(R.color.red)
                 }
             }
 

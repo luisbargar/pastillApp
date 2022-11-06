@@ -1,4 +1,4 @@
-package es.codigonline.proyecto.smarthome.ui.newDevice
+package es.codigonline.proyecto.smarthome.ui.newMedication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,13 +14,12 @@ import es.codigonline.proyecto.smarthome.database.entities.Medicacion
 import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
 import es.codigonline.proyecto.smarthome.databinding.ActivityNewDeviceBinding
 
-class NewDeviceActivity : AppCompatActivity() {
+class NewMedicationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNewDeviceBinding
-    private val viewModel: NewDeviceViewModel by viewModels()
+    private val viewModel: NewMedicationViewModel by viewModels()
 
-    private var marcaId = -1L
-    private var tipoId = -1L
+
 
     private lateinit var medicacionCompleta: MedicacionCompleta
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,12 +65,18 @@ class NewDeviceActivity : AppCompatActivity() {
             val nombre = binding.tieNombre.text.toString()
             val uso = binding.tieUso.text.toString()
             val url = binding.tieUrl.text.toString()
-            val imagen = binding.tieImagen.text.toString()
+            var imagen = binding.tieImagen.text.toString()
             val numero = binding.tieNumero.text.toString()
 
-            if (nombre.isBlank() || uso.isBlank() || url.isBlank() || imagen.isBlank() || numero.isBlank()) {
+            if (nombre.isBlank()||uso.isBlank()|| numero.isBlank()) {
                 Toast.makeText(this, getString(R.string.rellenar_campos), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            }
+
+            if (imagen.isBlank()){
+
+                imagen = "https://st.depositphotos.com/1748085/4534/v/950/depositphotos_45345337-stock-illustration-random-capsules.jpg"
+
             }
 
 

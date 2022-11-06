@@ -13,14 +13,14 @@ import es.codigonline.proyecto.smarthome.databinding.DeviceBinding
 
 class MedicacionesRecyclerViewAdapter(
     val list: List<MedicacionCompleta>,
-    private val listener: DeviceListener,
+    private val listener: MedicationListener,
     val context: Context
 ) :
     RecyclerView.Adapter<MedicacionesRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder private constructor(
         private val binding: DeviceBinding,
-        private val listener: DeviceListener,
+        private val listener: MedicationListener,
         private val context: Context
     ) : RecyclerView.ViewHolder(binding.root) {
         fun rellenarDatos(data: MedicacionCompleta) {
@@ -38,16 +38,19 @@ class MedicacionesRecyclerViewAdapter(
                 listener.edit(data)
             }
             if (data.toma) {
-                binding.like.setIconTintResource(R.color.red)
+                binding.like.setIconTintResource(R.color.green)
 
             } else {
-                binding.like.setIconTintResource(R.color.md_theme_light_outline)
+                binding.like.setIconTintResource(R.color.md_theme_light_surface)
             }
             if (data.stock) {
-                binding.stock.setIconTintResource(R.color.green)
+                binding.stock.setIconTintResource(R.color.red)
             } else {
-                binding.stock.setIconTintResource(R.color.md_theme_light_outline)
+                binding.stock.setIconTintResource(R.color.md_theme_light_surface)
             }
+
+
+
             val circularProgressDrawable = CircularProgressDrawable(context)
             circularProgressDrawable.strokeWidth = 5f
             circularProgressDrawable.centerRadius = 30f
@@ -62,26 +65,26 @@ class MedicacionesRecyclerViewAdapter(
             binding.like.setOnClickListener {
                 if (data.toma) {
                     listener.delToma(data.medicacion.id)
-                    binding.like.setIconTintResource(R.color.md_theme_light_outline)
+                    binding.like.setIconTintResource(R.color.md_theme_light_surface)
                 } else {
-                    binding.like.setIconTintResource(R.color.red)
+                    binding.like.setIconTintResource(R.color.green)
                     listener.addToma(data.medicacion.id)
                 }
             }
             binding.stock.setOnClickListener {
                 if (data.stock) {
                     listener.delStock(data.medicacion.id)
-                    binding.stock.setIconTintResource(R.color.md_theme_light_outline)
+                    binding.stock.setIconTintResource(R.color.md_theme_light_surface)
                 } else {
                     listener.addStock(data.medicacion.id)
-                    binding.stock.setIconTintResource(R.color.green)
+                    binding.stock.setIconTintResource(R.color.red)
                 }
             }
         }
 
         companion object {
             fun newInstance(
-                parent: ViewGroup, listener: DeviceListener, context: Context
+                parent: ViewGroup, listener: MedicationListener, context: Context
             ): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = DeviceBinding.inflate(layoutInflater, parent, false)
@@ -102,7 +105,7 @@ class MedicacionesRecyclerViewAdapter(
 
 }
 
-interface DeviceListener {
+interface MedicationListener {
     fun open(url: String)
     fun addToma(id: Long)
     fun delToma(id: Long)

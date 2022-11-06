@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
 import es.codigonline.proyecto.smarthome.databinding.FragmentDevicesBinding
-import es.codigonline.proyecto.smarthome.ui.adapters.DeviceListener
+import es.codigonline.proyecto.smarthome.ui.adapters.MedicationListener
 import es.codigonline.proyecto.smarthome.ui.adapters.MedicacionesRecyclerViewAdapter
 
 enum class TipoMedicacion(val tipo: Int) {
@@ -14,7 +14,7 @@ enum class TipoMedicacion(val tipo: Int) {
 }
 
 class CommonFragmentImpl(
-    val deviceListener: DeviceListener,
+    val medicationListener: MedicationListener,
     val context: Context,
     val binding: FragmentDevicesBinding
 ) {
@@ -23,7 +23,7 @@ class CommonFragmentImpl(
         mAdapterMedicaciones =
             MedicacionesRecyclerViewAdapter(
                 medicaciones as MutableList<MedicacionCompleta>,
-                deviceListener,
+                medicationListener,
                 context
             )
         val recyclerView = binding.rvHome

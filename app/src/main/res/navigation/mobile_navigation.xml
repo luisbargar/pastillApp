@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_favs"
-        android:name="es.codigonline.proyecto.smarthome.ui.home.FavsFragment"
+        android:name="es.codigonline.proyecto.smarthome.ui.home.TomaFragment"
         android:label="@string/menu_meds"
         tools:layout="@layout/fragment_devices" />
 
     <fragment
         android:id="@+id/nav_personales"
-        android:name="es.codigonline.proyecto.smarthome.ui.home.PersonalesFragment"
+        android:name="es.codigonline.proyecto.smarthome.ui.home.StocksFragment"
         android:label="@string/menu_existencias"
         tools:layout="@layout/fragment_devices" />
 </navigation>

@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
         viewModel.medicaciones(TipoMedicacion.GENERALES).observe(viewLifecycleOwner) {
             CommonFragmentImpl(
-                DeviceListenerImpl(
+                MedicationListenerImpl(
                     requireContext(),
                     viewModel,
                     parentFragmentManager

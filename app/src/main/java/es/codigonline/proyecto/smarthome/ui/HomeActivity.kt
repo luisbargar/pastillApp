@@ -15,7 +15,7 @@ import es.codigonline.proyecto.smarthome.R
 import es.codigonline.proyecto.smarthome.app.App
 import es.codigonline.proyecto.smarthome.databinding.ActivityHomeBinding
 import es.codigonline.proyecto.smarthome.databinding.NavHeaderHomeBinding
-import es.codigonline.proyecto.smarthome.ui.newDevice.NewDeviceActivity
+import es.codigonline.proyecto.smarthome.ui.newMedication.NewMedicationActivity
 import es.codigonline.proyecto.smarthome.ui.sign.LoginActivity
 
 
@@ -61,7 +61,7 @@ class HomeActivity : AppCompatActivity() {
         super.onStart()
 
         binding.appBarHome.fab.setOnClickListener {
-            startActivity(Intent(this, NewDeviceActivity::class.java))
+            startActivity(Intent(this, NewMedicationActivity::class.java))
         }
 
         val navViewBinding = NavHeaderHomeBinding.bind(binding.navView.getHeaderView(0))
