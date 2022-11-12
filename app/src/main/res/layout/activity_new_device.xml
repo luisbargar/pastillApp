@@ -16,35 +16,35 @@
 
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_vertical_10"
+                android:id="@+id/guideline_vertical_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="41dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_vertical_90"
+                android:id="@+id/guideline_vertical_93"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.9" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_horizontal_10"
+                android:id="@+id/guideline_horizontal_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.1" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_horizontal_75"
+                android:id="@+id/guideline_horizontal_50"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.75" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_horizontal_90"
+                android:id="@+id/guideline_horizontal_93"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -55,9 +55,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Nombre*"
-                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_90"
-                app:layout_constraintStart_toStartOf="@id/guideline_vertical_10"
-                app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_10">
+                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
+                app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_7">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_nombre"
@@ -71,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
                 android:hint="@string/uso"
-                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_90"
-                app:layout_constraintStart_toStartOf="@id/guideline_vertical_10"
+                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
                 app:layout_constraintTop_toBottomOf="@id/til_nombre">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -87,8 +87,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
                 android:hint="@string/url"
-                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_90"
-                app:layout_constraintStart_toStartOf="@id/guideline_vertical_10"
+                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
                 app:layout_constraintTop_toBottomOf="@id/til_uso">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -103,8 +103,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
                 android:hint="@string/imagen"
-                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_90"
-                app:layout_constraintStart_toStartOf="@id/guideline_vertical_10"
+                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
                 app:layout_constraintTop_toBottomOf="@id/til_url">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -119,8 +119,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin"
                 android:hint="@string/cantidad_toma"
-                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_90"
-                app:layout_constraintStart_toStartOf="@id/guideline_vertical_10"
+                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
                 app:layout_constraintTop_toBottomOf="@id/til_imagen">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -134,10 +134,10 @@
                 android:id="@+id/ll_horariosS"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="66dp"
+                android:layout_marginTop="70dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_90"
-                app:layout_constraintStart_toStartOf="@id/guideline_vertical_10"
+                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
                 app:layout_constraintTop_toBottomOf="@+id/til_numero">
 
                 <CheckBox
@@ -169,9 +169,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/double_default"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="112dp"
+                android:layout_marginEnd="110dp"
                 android:text="@string/guardar"
-                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_90"
+                app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
                 app:layout_constraintTop_toBottomOf="@id/ll_horariosS" />
 
             <com.google.android.material.button.MaterialButton
@@ -182,7 +182,7 @@
                 android:backgroundTint="@color/md_theme_dark_errorContainer"
                 android:text="@string/eliminar"
                 android:visibility="gone"
-                app:layout_constraintStart_toStartOf="@id/guideline_vertical_10"
+                app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
                 app:layout_constraintTop_toBottomOf="@id/ll_horariosS" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
