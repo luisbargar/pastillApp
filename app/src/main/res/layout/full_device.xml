@@ -19,8 +19,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imagen"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="280dp"
+            android:layout_height="230dp"
             app:layout_constraintBottom_toTopOf="@+id/nombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,14 +44,14 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nombre"/>
+            app:layout_constraintTop_toBottomOf="@id/nombre" />
 
         <TextView
             android:id="@+id/uso"
             style="@style/TextAppearance.Material3.BodyMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="37dp"
+            android:layout_marginBottom="8dp"
             android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/numero"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,6 @@
             style="@style/TextAppearance.Material3.BodySmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="37dp"
             android:layout_marginBottom="1dp"
             android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/url"
@@ -92,6 +91,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/url" />
+
         <LinearLayout
             android:id="@+id/ll2"
             android:layout_width="0dp"
@@ -107,8 +107,8 @@
                 android:layout_width="36dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_google_brands"
-                android:contentDescription="@string/logo_manana" />
+                android:contentDescription="@string/logo_manana"
+                android:src="@drawable/ic_google_brands" />
 
             <ImageView
 
@@ -116,8 +116,8 @@
                 android:layout_width="36dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_tarde_brands"
-                android:contentDescription="@string/logo_tarde"  />
+                android:contentDescription="@string/logo_tarde"
+                android:src="@drawable/ic_tarde_brands" />
 
             <ImageView
 
@@ -125,8 +125,8 @@
                 android:layout_width="36dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_noche_brands"
-                android:contentDescription="@string/logo_noche" />
+                android:contentDescription="@string/logo_noche"
+                android:src="@drawable/ic_noche_brands" />
         </LinearLayout>
 
 
@@ -135,14 +135,15 @@
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="16dp"
             android:insetLeft="0dp"
             android:insetTop="0dp"
             android:insetRight="0dp"
             android:insetBottom="0dp"
             android:paddingStart="26dp"
             android:paddingEnd="0dp"
-            app:cornerRadius="25dp"
+            app:cornerRadius="0dp"
+            android:visibility="gone"
             app:icon="@drawable/ic_baseline_medicacion_24"
             app:iconPadding="0dp"
             app:layout_constraintEnd_toStartOf="@id/stock"
@@ -159,7 +160,8 @@
             android:insetBottom="0dp"
             android:paddingStart="26dp"
             android:paddingEnd="0dp"
-            app:cornerRadius="25dp"
+            app:cornerRadius="0dp"
+            android:visibility="gone"
             app:icon="@drawable/ic_baseline_alerta_existencias_24"
             app:iconPadding="0dp"
             app:layout_constraintBottom_toBottomOf="@id/like"

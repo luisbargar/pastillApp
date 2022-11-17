@@ -62,7 +62,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_nombre"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +79,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_uso"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -94,7 +96,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_url"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -110,7 +113,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_imagen"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -127,7 +131,8 @@
                     android:id="@+id/tie_numero"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:textSize="24sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -145,21 +150,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/manana" />
+                    android:text="@string/manana"
+                    android:textSize="20sp" />
 
                 <CheckBox
                     android:id="@+id/tarde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/tarde" />
+                    android:text="@string/tarde"
+                    android:textSize="20sp" />
 
                 <CheckBox
                     android:id="@+id/noche"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/noche" />
+                    android:text="@string/noche"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -172,7 +180,8 @@
                 android:layout_marginEnd="110dp"
                 android:text="@string/guardar"
                 app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
-                app:layout_constraintTop_toBottomOf="@id/ll_horariosS" />
+                app:layout_constraintTop_toBottomOf="@id/ll_horariosS"
+                app:cornerRadius="0dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/eliminar"
