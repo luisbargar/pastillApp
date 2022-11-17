@@ -6,14 +6,15 @@
     android:layout_margin="@dimen/default_margin"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="@dimen/default_margin"
+    app:cardCornerRadius="0dp"
     app:strokeColor="@color/md_theme_dark_surfaceVariant"
     app:strokeWidth="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/double_default">
+        android:padding="3dp"
+        >
 
         <LinearLayout
             android:id="@+id/ll1"
@@ -34,12 +35,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:padding="@dimen/default_margin">
+                android:padding="3dp">
 
                 <TextView
                     android:id="@+id/nombre"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="63dp"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/numero"
@@ -49,7 +51,7 @@
                 <TextView
                     android:id="@+id/URL"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
         </LinearLayout>
@@ -66,7 +68,7 @@
             android:insetBottom="0dp"
             android:paddingStart="20dp"
             android:paddingEnd="0dp"
-            app:cornerRadius="0dp"
+            app:cornerRadius="50dp"
             app:icon="@drawable/ic_baseline_mode_edit_24"
             app:iconPadding="0dp"
             app:iconSize="32dp"
