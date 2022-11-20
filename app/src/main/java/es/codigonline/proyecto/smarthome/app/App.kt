@@ -41,7 +41,9 @@ class App : Application() {
             return null
 
         }
-
+        fun getDatabase(): AppDatabase {
+            return db
+        }
         fun clear() {
             val prefs =
                 instancia.getSharedPreferences(Constantes.PREFERENCES, Context.MODE_PRIVATE)!!
@@ -51,9 +53,7 @@ class App : Application() {
 
         private lateinit var db: AppDatabase
 
-        fun getDatabase(): AppDatabase {
-            return db
-        }
+
 
 
         fun showSnackbar(view: View, text: String) {

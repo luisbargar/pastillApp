@@ -11,12 +11,12 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import es.codigonline.proyecto.smarthome.R
 import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
-import es.codigonline.proyecto.smarthome.databinding.FullDeviceBinding
+import es.codigonline.proyecto.smarthome.databinding.FullMedicationBinding
 import es.codigonline.proyecto.smarthome.ui.home.HomeViewModel
 
 class DeviceDialog(val data: MedicacionCompleta) : DialogFragment() {
 
-    lateinit var binding: FullDeviceBinding
+    lateinit var binding: FullMedicationBinding
     private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -25,8 +25,8 @@ class DeviceDialog(val data: MedicacionCompleta) : DialogFragment() {
             val builder = AlertDialog.Builder(it)
             // Get the layout inflater
             val inflater = requireActivity().layoutInflater
-            val view = inflater.inflate(R.layout.full_device, null)
-            binding = FullDeviceBinding.bind(view)
+            val view = inflater.inflate(R.layout.full_medication, null)
+            binding = FullMedicationBinding.bind(view)
             binding.nombre.text = data.medicacion.nombre
             binding.uso.text = data.medicacion.uso
             binding.numero.text = getString(R.string.show_numero, data.medicacion.numero)

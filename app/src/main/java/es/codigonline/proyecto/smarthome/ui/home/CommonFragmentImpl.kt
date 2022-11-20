@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
-import es.codigonline.proyecto.smarthome.databinding.FragmentDevicesBinding
+import es.codigonline.proyecto.smarthome.databinding.FragmentMedicationsBinding
 import es.codigonline.proyecto.smarthome.ui.adapters.MedicationListener
 import es.codigonline.proyecto.smarthome.ui.adapters.MedicacionesRecyclerViewAdapter
 
@@ -16,7 +16,7 @@ enum class TipoMedicacion(val tipo: Int) {
 class CommonFragmentImpl(
     val medicationListener: MedicationListener,
     val context: Context,
-    val binding: FragmentDevicesBinding
+    val binding: FragmentMedicationsBinding
 ) {
     private lateinit var mAdapterMedicaciones: MedicacionesRecyclerViewAdapter
     fun createRecyclerView(medicaciones: List<MedicacionCompleta>) {

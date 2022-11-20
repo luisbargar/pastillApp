@@ -9,7 +9,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import es.codigonline.proyecto.smarthome.R
 import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
-import es.codigonline.proyecto.smarthome.databinding.DeviceBinding
+import es.codigonline.proyecto.smarthome.databinding.MedicationBinding
 
 class MedicacionesRecyclerViewAdapter(
     val list: List<MedicacionCompleta>,
@@ -19,7 +19,7 @@ class MedicacionesRecyclerViewAdapter(
     RecyclerView.Adapter<MedicacionesRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder private constructor(
-        private val binding: DeviceBinding,
+        private val binding: MedicationBinding,
         private val listener: MedicationListener,
         private val context: Context
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -87,7 +87,7 @@ class MedicacionesRecyclerViewAdapter(
                 parent: ViewGroup, listener: MedicationListener, context: Context
             ): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = DeviceBinding.inflate(layoutInflater, parent, false)
+                val binding = MedicationBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding, listener, context)
             }
         }

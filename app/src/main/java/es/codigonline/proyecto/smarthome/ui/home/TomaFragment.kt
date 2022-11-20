@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import es.codigonline.proyecto.smarthome.databinding.FragmentDevicesBinding
+import es.codigonline.proyecto.smarthome.databinding.FragmentMedicationsBinding
 
 class TomaFragment : Fragment() {
-    private var _binding: FragmentDevicesBinding? = null
+    private var _binding: FragmentMedicationsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,7 +23,7 @@ class TomaFragment : Fragment() {
     ): View {
 
 
-        _binding = FragmentDevicesBinding.inflate(inflater, container, false)
+        _binding = FragmentMedicationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         viewModel.medicaciones(TipoMedicacion.TOMAS).observe(viewLifecycleOwner) {

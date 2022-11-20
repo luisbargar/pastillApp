@@ -12,11 +12,11 @@ import es.codigonline.proyecto.smarthome.app.Constantes.Companion.NOCHE
 import es.codigonline.proyecto.smarthome.app.Constantes.Companion.MANANA
 import es.codigonline.proyecto.smarthome.database.entities.Medicacion
 import es.codigonline.proyecto.smarthome.database.relations.MedicacionCompleta
-import es.codigonline.proyecto.smarthome.databinding.ActivityNewDeviceBinding
+import es.codigonline.proyecto.smarthome.databinding.ActivityNewMedicationBinding
 
 class NewMedicationActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityNewDeviceBinding
+    private lateinit var binding: ActivityNewMedicationBinding
     private val viewModel: NewMedicationViewModel by viewModels()
 
 
@@ -24,7 +24,7 @@ class NewMedicationActivity : AppCompatActivity() {
     private lateinit var medicacionCompleta: MedicacionCompleta
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityNewDeviceBinding.inflate(layoutInflater)
+        binding = ActivityNewMedicationBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
