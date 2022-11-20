@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "8664359118",
-    "project_id": "smarthome-proyecto",
-    "storage_bucket": "smarthome-proyecto.appspot.com"
+    "project_id": "pastillApp-proyecto",
+    "storage_bucket": "pastillApp-proyecto.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:8664359118:android:ec591f4e059f50e957b09f",
         "android_client_info": {
-          "package_name": "es.codigonline.proyecto.smarthome"
+          "package_name": "es.luisbarreiros.proyecto.pastillApp"
         }
       },
       "oauth_client": [

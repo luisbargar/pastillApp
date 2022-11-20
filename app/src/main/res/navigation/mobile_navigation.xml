@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="es.codigonline.proyecto.smarthome.ui.home.HomeFragment"
+        android:name="es.luisbarreiros.proyecto.pastillApp.ui.home.HomeFragment"
         android:label="@string/menu_inicio"
         tools:layout="@layout/fragment_medications" />
 
     <fragment
         android:id="@+id/nav_favs"
-        android:name="es.codigonline.proyecto.smarthome.ui.home.TomaFragment"
+        android:name="es.luisbarreiros.proyecto.pastillApp.ui.home.TomaFragment"
         android:label="@string/menu_meds"
         tools:layout="@layout/fragment_medications" />
 
     <fragment
         android:id="@+id/nav_personales"
-        android:name="es.codigonline.proyecto.smarthome.ui.home.StocksFragment"
+        android:name="es.luisbarreiros.proyecto.pastillApp.ui.home.StocksFragment"
         android:label="@string/menu_existencias"
         tools:layout="@layout/fragment_medications" />
 </navigation>
