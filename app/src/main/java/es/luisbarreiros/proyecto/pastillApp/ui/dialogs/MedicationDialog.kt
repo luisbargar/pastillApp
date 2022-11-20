@@ -14,7 +14,7 @@ import es.luisbarreiros.proyecto.pastillApp.database.relations.MedicacionComplet
 import es.luisbarreiros.proyecto.pastillApp.databinding.FullMedicationBinding
 import es.luisbarreiros.proyecto.pastillApp.ui.home.HomeViewModel
 
-class DeviceDialog(val data: MedicacionCompleta) : DialogFragment() {
+class MedicationDialog(val data: MedicacionCompleta) : DialogFragment() {
 
     lateinit var binding: FullMedicationBinding
     private val homeViewModel: HomeViewModel by viewModels()

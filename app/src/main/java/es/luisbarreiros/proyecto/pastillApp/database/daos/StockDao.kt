@@ -7,5 +7,5 @@ import es.luisbarreiros.proyecto.pastillApp.database.entities.Stock
 @Dao
 interface StockDao : BaseDao<Stock> {
     @Query("DELETE FROM stocks where id_medicacion=:id")
-    fun deleteByDeviceId(id: Long)
+    fun deleteByMedicationId(id: Long)
 }

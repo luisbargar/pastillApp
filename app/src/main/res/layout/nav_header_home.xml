@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll1"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
@@ -44,6 +45,7 @@
             app:icon="@drawable/ic_baseline_logout_24"
             app:iconPadding="0dp"
             app:iconSize="24dp"
-            app:iconTint="@color/black" />
+            app:iconTint="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 </LinearLayout>

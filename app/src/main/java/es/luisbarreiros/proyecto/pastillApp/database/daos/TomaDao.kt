@@ -8,5 +8,5 @@ import es.luisbarreiros.proyecto.pastillApp.database.entities.Toma
 interface TomaDao : BaseDao<Toma> {
 
     @Query("DELETE FROM tomas where id_medicacion=:id")
-    fun deleteByDeviceId(id: Long)
+    fun deleteByMedicationId(id: Long)
 }

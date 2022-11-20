@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager
 import es.luisbarreiros.proyecto.pastillApp.app.Constantes
 import es.luisbarreiros.proyecto.pastillApp.database.relations.MedicacionCompleta
 import es.luisbarreiros.proyecto.pastillApp.ui.adapters.MedicationListener
-import es.luisbarreiros.proyecto.pastillApp.ui.dialogs.DeviceDialog
+import es.luisbarreiros.proyecto.pastillApp.ui.dialogs.MedicationDialog
 import es.luisbarreiros.proyecto.pastillApp.ui.newMedication.NewMedicationActivity
 
 class MedicationListenerImpl(
@@ -46,8 +46,8 @@ class MedicationListenerImpl(
     }
 
     override fun details(medicacionCompleta: MedicacionCompleta) {
-        val deviceFragment = DeviceDialog(medicacionCompleta)
-        deviceFragment.show(fragmentManager, Constantes.MEDICACION)
+        val medicationFragment = MedicationDialog(medicacionCompleta)
+        medicationFragment.show(fragmentManager, Constantes.MEDICACION)
     }
 
 }
