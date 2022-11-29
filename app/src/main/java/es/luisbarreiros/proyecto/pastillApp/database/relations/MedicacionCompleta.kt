@@ -5,7 +5,7 @@ import android.os.Parcelable
 import androidx.room.Embedded
 import es.luisbarreiros.proyecto.pastillApp.database.entities.Medicacion
 
-data class MedicacionCompleta(
+data class MedicacionCompleta( //como ninguna tiene esos campos creamos medicacionCompleta
     @Embedded val medicacion: Medicacion,
 
     val toma: Boolean,
@@ -26,7 +26,7 @@ data class MedicacionCompleta(
         parcel.readByte() != 0.toByte()
     )
 
-    override fun toString(): String {
+    override fun toString(): String { //sobrescribimos el toString
         return super.toString()
     }
 

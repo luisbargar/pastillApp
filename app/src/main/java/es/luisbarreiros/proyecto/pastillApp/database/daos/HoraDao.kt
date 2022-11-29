@@ -4,4 +4,4 @@ import androidx.room.Dao
 import es.luisbarreiros.proyecto.pastillApp.database.entities.HorarioS
 
 @Dao
-interface HoraDao : BaseDao<HorarioS>
+interface HoraDao : BaseDao<HorarioS> //heredamos de BaseDao
