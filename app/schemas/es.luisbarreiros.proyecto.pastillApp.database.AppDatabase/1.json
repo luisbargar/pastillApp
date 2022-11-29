@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6c4fd73952667a575209e1abde2802bb",
+    "identityHash": "6fa2974fa54d20b5f6620918ad5fd8e8",
     "entities": [
       {
         "tableName": "usuarios",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `password` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `create_at` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `password` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
         "fields": [
           {
             "fieldPath": "nombre",
@@ -23,12 +23,6 @@
           {
             "fieldPath": "id",
             "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "createAt",
-            "columnName": "create_at",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -54,7 +48,7 @@
       },
       {
         "tableName": "medicaciones",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `uso` TEXT NOT NULL, `url` TEXT NOT NULL, `imagen` TEXT NOT NULL, `numero` REAL NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `create_at` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `uso` TEXT NOT NULL, `url` TEXT NOT NULL, `imagen` TEXT NOT NULL, `numero` REAL NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
         "fields": [
           {
             "fieldPath": "nombre",
@@ -89,12 +83,6 @@
           {
             "fieldPath": "id",
             "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "createAt",
-            "columnName": "create_at",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -258,7 +246,7 @@
       },
       {
         "tableName": "horariosS",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `create_at` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
         "fields": [
           {
             "fieldPath": "nombre",
@@ -269,12 +257,6 @@
           {
             "fieldPath": "id",
             "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "createAt",
-            "columnName": "create_at",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -371,7 +353,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6c4fd73952667a575209e1abde2802bb')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6fa2974fa54d20b5f6620918ad5fd8e8')"
     ]
   }
 }

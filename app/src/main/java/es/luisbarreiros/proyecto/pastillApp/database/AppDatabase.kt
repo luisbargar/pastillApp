@@ -4,19 +4,19 @@ import android.content.Context
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteDatabase
 import es.luisbarreiros.proyecto.pastillApp.app.App
-import es.luisbarreiros.proyecto.pastillApp.database.converters.DateConverter
 import es.luisbarreiros.proyecto.pastillApp.database.daos.*
 import es.luisbarreiros.proyecto.pastillApp.database.entities.*
 import kotlinx.coroutines.*
 
-@Database(
+@Database( //anotación con entidades que forman la base de datos y su versión.
     entities = [Usuario::class, Medicacion::class,  Toma::class, Stock::class, HorarioS::class, Horario::class],
     version = 1
 )
 
-@TypeConverters(DateConverter::class)
-abstract class AppDatabase : RoomDatabase() {
 
+abstract class AppDatabase : RoomDatabase() { //clase que extiende de room database y es necesaria para el funcionamiento de la base de datos.
+//definimos base de datos. creamos funciones abstarctas donde cada una correponde a la interfaz correspondiente.
+    //declaramos todos los Dao como funcion abstracta.
     abstract fun usuarioDao(): UsuarioDao
     abstract fun medicacionDao(): MedicacionDao
     abstract fun stockDao(): StockDao
@@ -24,25 +24,27 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun horaDao(): HoraDao
     abstract fun horarioDao(): HorarioDao
 
-    companion object { //static
-        private lateinit var db: AppDatabase
+    companion object { //metodo estatico
+        private lateinit var db: AppDatabase //creamos objeto de esta clase utilizando el patron builder.
 
-        fun initDB(context: Context): AppDatabase {
-            if (!this::db.isInitialized) { //Singleton
+        fun initDB(context: Context): AppDatabase { //recibe el contexto y devuelve instancia de appdatabase
+            if (!this::db.isInitialized) { // aplicamos patrón Singleton. Si no esta inicializado consturimos objeto.
+
                 db = Room.databaseBuilder(context, AppDatabase::class.java, "database-name")
-                    .addCallback(callback)
+                    .addCallback(callback) //prerrellenamos la base de datos
                     .build()
             }
-            return db
+            return db //si ya esta inicializada devolvemos
         }
 
-        private val callback: Callback = object : Callback() { //creamos un objeto de la clase
+        private val callback: Callback = object : Callback() { //creamos implementacion de la clase Callback. Al ser abstracta
+            //debemos de implementar los diferentes metodos que vayamos a utilizar.
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
-                GlobalScope.launch {
+                GlobalScope.launch {//accedemos al dispatchers
                     //INSERCION DE DATOS
                     withContext(Dispatchers.IO) {
-                        App.getDatabase().usuarioDao().save(Usuario("luis", "123456"))
+                        App.getDatabase().usuarioDao().save(Usuario("luis", "123456")) //insertamos datos con los Dao
                         App.getDatabase().horaDao().insertAll(
                             HorarioS("Tarde"),
                             HorarioS("Manana"),

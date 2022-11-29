@@ -5,19 +5,15 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 
+
 @Entity(
-    tableName = Stock.TABLE_NAME, primaryKeys = ["id_usuario", "id_medicacion"],
+    tableName = Stock.TABLE_NAME, primaryKeys = ["id_usuario", "id_medicacion"],//no extiende de BaseEntity, clave compuesta por dos columnas.
     indices = [Index(value = ["id_usuario"]), Index(value = ["id_medicacion"])],
-    foreignKeys = [ForeignKey(
-        entity = Medicacion::class,
-        parentColumns = ["id"],
-        childColumns = ["id_medicacion"],
-        onUpdate = ForeignKey.CASCADE, onDelete = ForeignKey.CASCADE
-    ), ForeignKey(
-        entity = Usuario::class,
-        parentColumns = ["id"],
-        childColumns = ["id_usuario"],
-        onUpdate = ForeignKey.CASCADE, onDelete = ForeignKey.CASCADE
+    foreignKeys = [
+        ForeignKey(entity = Medicacion::class, parentColumns = ["id"], childColumns = ["id_medicacion"],
+        onUpdate = ForeignKey.CASCADE, onDelete = ForeignKey.CASCADE//cambios en cascada.
+    ), ForeignKey( entity = Usuario::class, parentColumns = ["id"], childColumns = ["id_usuario"],
+        onUpdate = ForeignKey.CASCADE, onDelete = ForeignKey.CASCADE//cambios en cascada.
     )]
 )
 data class Stock(
@@ -27,5 +23,4 @@ data class Stock(
     companion object {
         const val TABLE_NAME = "stocks"
     }
-
 }
