@@ -92,14 +92,17 @@ class MedicacionesRecyclerViewAdapter(
             }
         }
     }
+    override fun getItemCount() = list.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+
         ViewHolder.newInstance(parent, listener, context)
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) =
+
         viewHolder.rellenarDatos(list[position])
 
-    override fun getItemCount() = list.size
+
 
 
 

@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.69"
+        app:layout_constraintGuide_percent="0.74"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -45,13 +45,15 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/logo"
-        android:layout_width="290dp"
-        android:layout_height="220dp"
+        android:layout_width="192dp"
+        android:layout_height="86dp"
         android:layout_marginTop="-25dp"
+        android:layout_marginBottom="13dp"
         android:padding="0dp"
         android:rotationX="15"
         android:scaleType="fitCenter"
         android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/til_username"
         app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
         app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
         app:layout_constraintTop_toTopOf="@id/guideline_horizontal_7"
@@ -120,12 +122,12 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline_vertical_93"
         app:layout_constraintStart_toStartOf="@id/guideline_vertical_7"
         app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_50">
-
 
 
         <com.google.android.material.button.MaterialButton
@@ -149,7 +151,7 @@
             android:layout_weight="1"
             android:text="@string/cancelar"
             android:textColorLink="#00695C"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:cornerRadius="0dp"
             app:icon="@drawable/ic_baseline_close_24" />
 
