@@ -9,11 +9,11 @@
             android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/menu_inicio" />
         <item
-            android:id="@+id/nav_favs"
+            android:id="@+id/nav_tomas"
             android:icon="@drawable/ic_baseline_medicacion_24"
             android:title="@string/menu_meds" />
         <item
-            android:id="@+id/nav_personales"
+            android:id="@+id/nav_stocks"
             android:icon="@drawable/ic_baseline_alerta_existencias_24"
             android:title="@string/menu_existencias" />
     </group>

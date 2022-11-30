@@ -12,66 +12,59 @@ import es.luisbarreiros.proyecto.pastillApp.database.relations.MedicacionComplet
 import es.luisbarreiros.proyecto.pastillApp.databinding.MedicationBinding
 
 class MedicacionesRecyclerViewAdapter(
-    val list: List<MedicacionCompleta>,
-    private val listener: MedicationListener,
-    val context: Context
+    val list: List<MedicacionCompleta>, //recibimos lista dispositivos
+    private val listener: MedicationListener,// recibo listener, conunto de funciones de la interface MedicationListener
+    val context: Context //recibo el contexto
 ) :
-    RecyclerView.Adapter<MedicacionesRecyclerViewAdapter.ViewHolder>() {
+    RecyclerView.Adapter<MedicacionesRecyclerViewAdapter.ViewHolder>() { //Le pasamos el VIewHolder, clase que crea las tarjetas de las medicaciones
 
-    class ViewHolder private constructor(
+    class ViewHolder private constructor( //creamos una clase con un binding,  recibiendo un listener y un contexto
         private val binding: MedicationBinding,
         private val listener: MedicationListener,
-        private val context: Context
+        private val context: Context //el contexto lo ponemos aqui por el GLide, para mejorar el funcionamiento
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun rellenarDatos(data: MedicacionCompleta) {
-            binding.root.setOnClickListener {
+        fun rellenarDatos(data: MedicacionCompleta) { //recibimos una MedicacionCOmpleta
+            binding.root.setOnClickListener {//Cuando hacemos click en la tarjeta de la medicación vemos los detalles.
                 listener.details(data)
-            }
+            } //después ponemos toda la información que queremos que aparezca en los detalles
             binding.nombre.text = data.medicacion.nombre
             binding.numero.text = context.getString(R.string.show_numero, data.medicacion.numero)
             binding.URL.text = context.getString(R.string.externo)
-            binding.URL.setTextColor(Color.BLUE)
-            binding.URL.setOnClickListener {
+            binding.URL.setTextColor(Color.GREEN)
+            binding.URL.setOnClickListener { //abrirá el enlace del prospecto
                 listener.open(data.medicacion.url)
             }
-            binding.edit.setOnClickListener {
+            binding.edit.setOnClickListener { //botón de editar información
                 listener.edit(data)
             }
-            if (data.toma) {
-                binding.like.setIconTintResource(R.color.green)
-
-            } else {
-                binding.like.setIconTintResource(R.color.md_theme_light_surface)
+            //definimos el color de los iconos cuando están marcados/desmarcados
+            if (data.toma) { binding.toma.setIconTintResource(R.color.green)
+            } else { binding.toma.setIconTintResource(R.color.md_theme_light_surface)
             }
-            if (data.stock) {
-                binding.stock.setIconTintResource(R.color.red)
-            } else {
-                binding.stock.setIconTintResource(R.color.md_theme_light_surface)
+            if (data.stock) { binding.stock.setIconTintResource(R.color.red)
+            } else { binding.stock.setIconTintResource(R.color.md_theme_light_surface)
             }
-
-
-
-            val circularProgressDrawable = CircularProgressDrawable(context)
-            circularProgressDrawable.strokeWidth = 5f
-            circularProgressDrawable.centerRadius = 30f
+            val circularProgressDrawable = CircularProgressDrawable(context) //animación circular cuando carga la imagen.
+            circularProgressDrawable.strokeWidth = 6f
+            circularProgressDrawable.centerRadius = 32f
             circularProgressDrawable.start()
-            Glide
+            Glide //creamos el Glide
                 .with(context)
                 .load(data.medicacion.imagen)
                 .centerCrop()
                 .placeholder(circularProgressDrawable)
                 .into(binding.imagen)
 
-            binding.like.setOnClickListener {
+            binding.toma.setOnClickListener { //para las tomas. Si está activada o no cambian los colores.
                 if (data.toma) {
                     listener.delToma(data.medicacion.id)
-                    binding.like.setIconTintResource(R.color.md_theme_light_surface)
+                    binding.toma.setIconTintResource(R.color.md_theme_light_surface)
                 } else {
-                    binding.like.setIconTintResource(R.color.green)
+                    binding.toma.setIconTintResource(R.color.green)
                     listener.addToma(data.medicacion.id)
                 }
             }
-            binding.stock.setOnClickListener {
+            binding.stock.setOnClickListener { //para el stock. Si está activado o no cambian los colores.
                 if (data.stock) {
                     listener.delStock(data.medicacion.id)
                     binding.stock.setIconTintResource(R.color.md_theme_light_surface)
@@ -81,9 +74,8 @@ class MedicacionesRecyclerViewAdapter(
                 }
             }
         }
-
-        companion object {
-            fun newInstance(
+        companion object { //dentro del viewHolder.
+            fun newInstance( //creamos binding, le pasamos el listener y el contexto.
                 parent: ViewGroup, listener: MedicationListener, context: Context
             ): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
@@ -93,21 +85,13 @@ class MedicacionesRecyclerViewAdapter(
         }
     }
     override fun getItemCount() = list.size
+    //devuelve el tamaño total de la lista
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder.newInstance(parent, listener, context)
 
-        ViewHolder.newInstance(parent, listener, context)
-
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) =
-
-        viewHolder.rellenarDatos(list[position])
-
-
-
-
-
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) =  viewHolder.rellenarDatos(list[position])
+    //Lo que se pasa cuando queremos vincular datos
 }
-
 interface MedicationListener {
     fun open(url: String)
     fun addToma(id: Long)

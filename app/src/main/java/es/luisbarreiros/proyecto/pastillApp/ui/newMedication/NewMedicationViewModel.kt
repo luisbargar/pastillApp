@@ -8,18 +8,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
 class NewMedicationViewModel : ViewModel() {
 
     private val horarioDao = App.getDatabase().horarioDao()
     private val medicacionDao = App.getDatabase().medicacionDao()
-
-
-
-    fun save(medicacion: Medicacion): LiveData<Long> {
+    fun save(medicacion: Medicacion): LiveData<Long> { //función para guardar una medicación
         val data = MutableLiveData<Long>()
         viewModelScope.launch {
-            try {
-                val id = withContext(Dispatchers.IO) {
+            try { val id = withContext(Dispatchers.IO) {
                     medicacionDao.save(medicacion)
                 }
                 data.value = id
@@ -29,24 +26,11 @@ class NewMedicationViewModel : ViewModel() {
         }
         return data
     }
-
-
-
-
-    fun addHorario(sistema: Long, dispositivo: Long) {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                horarioDao.save(Horario(sistema, dispositivo))
-            }
-        }
-    }
-
-    fun update(medicacion: Medicacion): LiveData<Boolean> {
+    fun update(medicacion: Medicacion): LiveData<Boolean> { //función para actualizar medicación
         val data = MutableLiveData<Boolean>()
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                try {
-                    medicacionDao.update(medicacion)
+                try { medicacionDao.update(medicacion)
                     data.postValue(true)
                 } catch (ex: SQLiteConstraintException) {
                     data.postValue(false)
@@ -56,15 +40,7 @@ class NewMedicationViewModel : ViewModel() {
         return data
     }
 
-    fun delHorario(sistema: Long, id: Long) {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                horarioDao.delete(Horario(sistema, id))
-            }
-        }
-    }
-
-    fun eliminar(medicacion: Medicacion) {
+    fun eliminar(medicacion: Medicacion) { //función para eliminar una medicación
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 medicacionDao.delete(medicacion)
@@ -72,6 +48,18 @@ class NewMedicationViewModel : ViewModel() {
         }
 
     }
-
-
+    fun addHorario(sistema: Long, dispositivo: Long) { //función para añadir un horario
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                horarioDao.save(Horario(sistema, dispositivo))
+            }
+        }
+    }
+    fun delHorario(sistema: Long, id: Long) { //función para borrar un horario
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                horarioDao.delete(Horario(sistema, id))
+            }
+        }
+    }
 }

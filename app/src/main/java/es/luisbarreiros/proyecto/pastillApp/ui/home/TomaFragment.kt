@@ -8,37 +8,32 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import es.luisbarreiros.proyecto.pastillApp.databinding.FragmentMedicationsBinding
 
-class TomaFragment : Fragment() {
-    private var _binding: FragmentMedicationsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-    private val viewModel: HomeViewModel by viewModels()
+class TomaFragment : Fragment() {
+    private var _binding: FragmentMedicationsBinding? = null //creamos el binding
+    private val binding get() = _binding!! //funcion getter para _binding
+    private val viewModel: HomeViewModel by viewModels() //creamos el viewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
-        _binding = FragmentMedicationsBinding.inflate(inflater, container, false)
+        _binding = FragmentMedicationsBinding.inflate(inflater, container, false) //definimos el binding
         val root: View = binding.root
-
-        viewModel.medicaciones(TipoMedicacion.TOMAS).observe(viewLifecycleOwner) {
-            CommonFragmentImpl(
+        viewModel.medicaciones(TipoMedicacion.TOMAS).observe(viewLifecycleOwner) { //definimos consulta para recuperar la lista de medicaciones que toma el usuario
+            CommonFragmentImpl( //creamos el CommonFragmentImpl para crear el recyclerVIew en común a todos los Fragment.
                 MedicationListenerImpl(
                     requireContext(),
                     viewModel,
                     parentFragmentManager
                 ), requireContext(), binding
-            ).createRecyclerView(it)
+            ).createRecyclerView(it) //creamosRecyclerView
         }
         return root
     }
-
-    override fun onDestroyView() {
+    override fun onDestroyView() { //destruimos el binding para que no se quede en memoria
+        super.onDestroyView()
         super.onDestroyView()
         _binding = null
     }

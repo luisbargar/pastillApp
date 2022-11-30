@@ -11,45 +11,38 @@ import kotlinx.coroutines.withContext
 
 class HomeViewModel : ViewModel() {
 
-    private val medicacionDao = App.getDatabase().medicacionDao()
+
+    private val medicacionDao = App.getDatabase().medicacionDao() //inicializamos los tres Daos
     private val tomaDao = App.getDatabase().tomaDao()
     private val stockDao = App.getDatabase().stockDao()
 
-    fun medicaciones(tipo:TipoMedicacion): LiveData<List<MedicacionCompleta>> {
+    fun medicaciones(tipo:TipoMedicacion): LiveData<List<MedicacionCompleta>> { //función para recuperar todos los datos dependiendo del tipo de medicación
         return when (tipo.tipo) {
             1 -> medicacionDao.findAll(App.getUsuario()!!.id).asLiveData()
             2 -> medicacionDao.findAllToma(App.getUsuario()!!.id).asLiveData()
             else -> medicacionDao.findAllStock(App.getUsuario()!!.id).asLiveData()
         }
     }
-
-    fun addToma(medicacionId: Long) {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
+    fun addToma(medicacionId: Long) { //función de añadir a la lista que toma el usuario
+        viewModelScope.launch {withContext(Dispatchers.IO) {
                 tomaDao.save(Toma(medicacionId, App.getUsuario()!!.id))
             }
         }
     }
-
-    fun delToma(medicacionId: Long) {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
+    fun delToma(medicacionId: Long) { //Borrar de la lista que toma el usuario
+        viewModelScope.launch {withContext(Dispatchers.IO) {
                 tomaDao.delete(Toma(medicacionId, App.getUsuario()!!.id))
             }
         }
     }
-
-    fun addStock(medicacionId: Long) {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
+    fun addStock(medicacionId: Long) { //añadir a la lista de medicación que hay que comprar
+        viewModelScope.launch {withContext(Dispatchers.IO) {
                 stockDao.save(Stock(medicacionId, App.getUsuario()!!.id))
             }
         }
     }
-
-    fun delStock(medicacionId: Long) {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
+    fun delStock(medicacionId: Long) { //borrar de la lista de medicación que hay que comprar
+        viewModelScope.launch {withContext(Dispatchers.IO) {
                 stockDao.delete(Stock(medicacionId, App.getUsuario()!!.id))
             }
         }

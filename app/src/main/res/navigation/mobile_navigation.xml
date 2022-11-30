@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_medications" />
 
     <fragment
-        android:id="@+id/nav_favs"
+        android:id="@+id/nav_tomas"
         android:name="es.luisbarreiros.proyecto.pastillApp.ui.home.TomaFragment"
         android:label="@string/menu_meds"
         tools:layout="@layout/fragment_medications" />
 
     <fragment
-        android:id="@+id/nav_personales"
+        android:id="@+id/nav_stocks"
         android:name="es.luisbarreiros.proyecto.pastillApp.ui.home.StocksFragment"
         android:label="@string/menu_existencias"
         tools:layout="@layout/fragment_medications" />
