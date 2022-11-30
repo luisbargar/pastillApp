@@ -7,13 +7,11 @@ import es.luisbarreiros.proyecto.pastillApp.database.entities.Medicacion
 
 data class MedicacionCompleta( //como ninguna tiene esos campos creamos medicacionCompleta
     @Embedded val medicacion: Medicacion,
-
     val toma: Boolean,
     val stock: Boolean,
     val tarde: Boolean,
     val manana: Boolean,
     val noche: Boolean
-
     ):Parcelable {
 
     constructor(parcel: Parcel) : this(
