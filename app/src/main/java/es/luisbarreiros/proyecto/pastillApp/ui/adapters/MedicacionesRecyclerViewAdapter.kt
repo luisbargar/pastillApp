@@ -12,7 +12,7 @@ import es.luisbarreiros.proyecto.pastillApp.database.relations.MedicacionComplet
 import es.luisbarreiros.proyecto.pastillApp.databinding.MedicationBinding
 
 class MedicacionesRecyclerViewAdapter(
-    val list: List<MedicacionCompleta>, //recibimos lista dispositivos
+    val list: List<MedicacionCompleta>, //recibimos lista medicaciones
     private val listener: MedicationListener,// recibo listener, conunto de funciones de la interface MedicationListener
     val context: Context //recibo el contexto
 ) :

@@ -25,7 +25,7 @@ class NewMedicationActivity : AppCompatActivity() {
         binding = ActivityNewMedicationBinding.inflate(layoutInflater) //inicializamos binding
         setContentView(binding.root)
 
-        intent.extras?.let { //comprobamos si nos viene información a traves del Bundle (si estamos editando el dispositivo viene dado)
+        intent.extras?.let { //comprobamos si nos viene información a traves del Bundle (si estamos editando la medicacion viene dado)
             //Si hay datos relleno toda la vista con la información correspondiente
             binding.eliminar.visibility = View.VISIBLE //habilito el botón de eliminar
             medicacionCompleta = it.getParcelable(Constantes.MEDICACION)!!
@@ -71,7 +71,7 @@ class NewMedicationActivity : AppCompatActivity() {
             )
            var errors = false
 
-            if (!this::medicacionCompleta.isInitialized) //si no recibimos un dispositivo llamamos a la funcion save.
+            if (!this::medicacionCompleta.isInitialized) //si no recibimos un medicación llamamos a la funcion save.
                 viewModel.save(medicacion).observe(this) {
                     if (it == -1L) {
                         Toast.makeText(

@@ -48,10 +48,10 @@ class NewMedicationViewModel : ViewModel() {
         }
 
     }
-    fun addHorario(sistema: Long, dispositivo: Long) { //función para añadir un horario
+    fun addHorario(sistema: Long, medicacion: Long) { //función para añadir un horario
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                horarioDao.save(Horario(sistema, dispositivo))
+                horarioDao.save(Horario(sistema, medicacion))
             }
         }
     }
