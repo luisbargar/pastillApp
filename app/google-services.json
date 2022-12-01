@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "8664359118",
-    "project_id": "pastillApp-proyecto",
-    "storage_bucket": "pastillApp-proyecto.appspot.com"
+    "project_number": "518219928287",
+    "project_id": "pastillapp-369212",
+    "storage_bucket": "pastillapp-369212.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:8664359118:android:ec591f4e059f50e957b09f",
+        "mobilesdk_app_id": "1:518219928287:android:c4cc992ed4b9735b164f6a",
         "android_client_info": {
           "package_name": "es.luisbarreiros.proyecto.pastillApp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "8664359118-miro4chorl34pl7jfm3f2gkbsta2u2fs.apps.googleusercontent.com",
+          "client_id": "518219928287-fc4jbar5lpqv01bdhbp3o153ot0tnrop.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBr1AfQlpxQzTKFz_laVemfRlLS2T40mnM"
+          "current_key": "AIzaSyAe8sR7XhY8D53kqEryLuomtjdWixE5fGY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "8664359118-miro4chorl34pl7jfm3f2gkbsta2u2fs.apps.googleusercontent.com",
+              "client_id": "518219928287-fc4jbar5lpqv01bdhbp3o153ot0tnrop.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
